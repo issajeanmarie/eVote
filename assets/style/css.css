@@ -1,0 +1,807 @@
+*{
+	transition: 0.3s;
+	box-sizing: border-box;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	background: #f1f1f1;
+	margin: 0;
+	padding: 0;
+
+	font-family: Arial;
+}
+
+@font-face {
+	font-family: chosen;
+	src: url('../fonts/DVGN1ntt.ttf');
+}
+
+a{
+	text-decoration: none;;
+	color: #35bb9a;
+}
+
+/*
+		========== Menu ==========
+*/
+
+.main-header{
+	background: #000;
+	box-shadow: 0px 1px 3px rgb(100,100,100);
+	width: 100%;
+	height: 51px;
+	padding: 12px;
+
+	position: fixed;
+	display: inline;
+	z-index: 1;
+}
+
+.brand{
+	background: none;
+	margin-top: -0.5%;
+	font-size: 2em;
+	width: 50%;
+	margin-top: -6px;
+	height: 0 auto;
+	color: rgb(180,180,180);
+	float: left;
+}
+
+.brand-word{
+	display: none;
+}
+
+.brand-img{
+	background: linear-gradient(blue, yellow, green);
+	padding: 2px;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	float: left;
+	margin-right: 2%;
+}
+
+.brand img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 100%;
+	float: left;
+}
+
+nav{
+	background: none;
+	width: 90%;
+	height: 0 auto;
+
+	position: absolute;
+	right: 2%;
+}
+
+nav ul{
+	list-style-type: none;
+	margin-top: 0;
+}
+
+nav ul li{
+	border-radius: 4px;
+	height: 30px;
+	margin-right: 3%;
+
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+
+	float: right;
+}
+
+nav ul li a{
+	color: rgb(210,210,210);
+	text-decoration: none;
+	text-align: center;
+}
+
+nav ul li a:hover{
+	color: #45666d;
+}
+
+nav ul li a.current{
+	color: #45666d;
+}
+
+.container{
+	background: none;
+	padding: 12px;
+	width: 100%;
+	height: 0 auto;
+
+	margin-top: 43px;
+	position: absolute;
+	z-index: 0;
+}
+
+.welcome{
+	background-image: url('../images/bg.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+	position: relative;
+	padding: 12px;
+	width: 100%;
+	height: 0 auto;
+
+	clear: both;
+	content: "";
+	display: table;
+	
+}
+
+.slog{
+	color: #fff;
+	font-weight: bold;
+	font-size: 3.5em;
+	font-family: chosen;
+}
+
+/*
+		======== CANDIDATES PAGE========
+
+*/
+
+.candidates{
+	background: none;
+	width: 100%;
+	height: 0 auto;
+	margin-top: 1%;
+
+	position: relative;
+}
+
+.candidates fieldset{
+	border: none;
+	background: none;
+	box-shadow: 0 2px 4px rgb(200,200,200);
+}
+
+.candidates fieldset legend{
+	color: #fff;
+	font-weight: bold;
+	background: black;
+	line-height: 40px;
+}
+
+.single-candidate{
+	background: #fff;
+	box-shadow: 0 5px 4px #999;
+	width: 48%;
+	height: 0 auto;
+	margin-top: 1%;
+	margin-left: 1%;
+
+	display: inline-block;
+}
+
+.pro-cont{
+	background: none;
+	width: 99%;
+	height: 265px;
+	margin: 0 auto;
+	margin-top: 1%;
+}
+
+.pro-cont img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+.desc{
+	background: #fff;
+	width: 100%;
+	height: 0 auto;
+	padding: 6px;
+	margin-top: 1%;
+	overflow: hidden;
+}
+
+.cand-name{
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 0.7em;
+}
+
+.cand-info{
+	color: #444;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: bold;
+}
+
+
+/*
+		========== Vote section ==========
+*/
+
+.vote-wrapper{
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+	margin-top: 40px;
+	display: none;
+	overflow: hidden;
+
+	position: fixed;
+	z-index: 1;
+}
+
+.vote{
+	background: #f1f1f1;
+	width: 95%;
+	height: 0 auto;
+	margin: 0 auto;
+	border-radius: 5px;
+	margin-top: 10%;
+	padding: 5px;
+
+	position: relative;
+	z-index: 1;
+}
+
+.newPerson{
+	margin-top: 5%;
+}
+
+.vote p{
+	background: #333;
+	color: #fff;
+	text-align: center;
+	border-bottom: 1px solid #c8c8c8;
+	margin-top: 0;
+	font-size: 1.7em;
+	font-family: chosen;
+	padding: 6px;
+}
+
+.vote input[type="number"]{
+	background: white;
+	width: 90%;
+	height: 40px;
+	border: 1px solid #c8c8c8;
+	margin-left: 1%;
+	padding: 6px;
+	font-weight: bold;
+	border-radius: 4px;
+}
+
+.vote input[type="text"], .vote input[type="date"], .vote input[type="file"]{
+	background: white;
+	width: 90%;
+	height: 40px;
+	border: 1px solid #c8c8c8;
+	margin-left: 1%;
+	padding: 6px;
+	font-weight: bold;
+	border-radius: 4px;
+}
+
+.vote input[type="submit"]{
+	background: #39bc9d;
+	color: rgb(230,230,230);
+	cursor: pointer; 
+	display: block;
+	margin: 0 auto;
+	width: 70%;
+	height: 40px;
+	border: none;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.vote input[type="submit"]:hover{
+	box-shadow: 0 2px 5px #777;
+}
+
+.vote label{
+	margin-left: 1%;
+	padding: 5px;
+	font-weight: bold;
+	color: #999;
+}
+
+.close{
+	font-size: 0.7em;
+	color: white;
+	background: maroon;
+	margin-right: 2%;
+	padding: 5px;
+	border-radius: 100%;
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-top: -0.5%;
+	cursor: pointer;
+}
+
+.close:hover{
+	background: red;
+}
+
+
+
+
+
+
+
+
+
+.vote-candidate{
+	background: white;
+	width: 48%;
+	height: 200px;
+	border: 1px solid #fff;
+
+	display: inline-block;
+}
+
+.vote-btn{
+	background: rgb(0,30,200);
+	width: 60%;
+	height: 40px;
+	border: none;
+	margin: 0 auto;
+	margin-top: 15px;
+	color: white;
+	font-weight: bold;
+	font-size: 1.3em;
+	display: block;
+	cursor: pointer;
+}
+
+.vote-btn:hover{
+	background: #39bc9d;
+	box-shadow: 0 4px 8px rgb(160,160,160);
+}
+
+
+
+/*
+		========== Login form ==========
+*/
+
+.loginForm{
+	background: #fff;
+	border: 1px solid rgb(200,200,200);
+	width: 80%;
+	height: 0 auto;
+	margin: 0 auto;
+	margin-top: 40px;
+	border-radius: 5px;
+	box-shadow: 0 2px 6px #f1f1f1;
+	padding: 12px;
+}
+
+.loginForm p{
+	color: #34ba99;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.6em;
+	margin-top: 0;
+	padding: 6px;
+	border-bottom: 2px solid ;
+}
+
+.loginForm label{
+	color: #41646a;
+	font-weight: bold;
+	padding: 5px;
+	font-size: 1.1em;
+}
+
+.loginForm input[type="text"], .loginForm input[type="password"]{
+	background: #f1f1f1;
+	border: 1px solid #b5b3b3;
+	border-radius: 5px;
+	width: 100%;
+	height: 40px;
+
+	padding: 12px;
+	font-weight: bold;
+}
+
+.loginForm input[type="text"]:focus, .loginForm input[type="password"]:focus{
+	background: #fff;
+}
+
+.loginForm input[type="submit"]{
+	background: #41646a;
+	border: none;
+	width: 70%;
+	height: 40px;
+	display: block;
+	margin: 0 auto;
+	color: white;
+	font-weight: bold;
+	font-size: 1.4em;
+	cursor: pointer;
+}
+
+.loginForm input[type="submit"]:hover{
+	box-shadow: 2px 4px 6px rgb(150,150,150);
+}
+
+label[class*=error-]{
+	color: maroon;
+	font-style: italic;
+}
+
+.end-com{
+	width: 40%;
+	height: 40px;
+	background: #555;
+	border: none;
+	float: right;
+	margin-right: -40%;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.end-com:hover{
+	background: #777;
+}
+
+.update-profile{
+	background: linear-gradient(blue, yellow, green);
+	border-radius: 100%;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 2px;
+}
+
+.update-owner-names{
+	color: #39bc9d;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.3em;
+	margin-top: 0;
+	padding-bottom: 6px;
+	margin-bottom: 0;
+}
+
+.update-profile img{
+	border-radius: 100%;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.form-update{
+	background: #fff;
+	width: 80%;
+	padding: 12px;
+	height: 0 auto;
+	margin: 0 auto;
+	margin-top: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 2px 6px rgb(170,170,170);
+}
+
+.form-update label{
+	color: #999;
+	margin-bottom: -4%;
+	margin-top: 2%;
+	font-weight: bold;
+	display: block;
+}
+
+.form-update input{
+	background: #fff;
+	width: 100%;
+	height: 40px;
+	border: 2px solid rgb(220,220,220);
+	color: rgb(100,100,100);
+	font-weight: bold;
+	padding: 6px;
+	border-radius: 6px;
+}
+
+.form-update input[type="submit"]{
+	background: #39bc9d;
+	color: #fff;
+	font-size: 1.2em;
+	border-radius: 0;
+	border: none;
+	cursor: pointer;
+}
+
+.form-update input[type="submit"]:hover{
+	box-shadow: 0 2px 6px #999;
+}
+
+.table-people{
+	background: #fff;
+	padding: 12px;
+	width: 800px;
+	height: 0 auto;
+	margin: 0 auto;
+	margin-top: 10px;
+	overflow-x: auto;
+	box-shadow: 0 3px 6px rgb(200,200,200);
+	border-radius: 4px;
+}
+
+
+.table-people tr td{
+	padding: 6px;
+}
+
+.table-people th{
+	text-align: left;
+	background: rgb(240,240,240);
+	padding: 12px;
+	color: #333;
+}
+
+.table-people tr:nth-child(odd){
+	background: rgb(240,250,240);
+}
+
+button.add-person{
+	background: #000;
+	width: 10%;
+	height: 40px;
+	margin-left: 10%;
+	color: white;
+	cursor: pointer;
+}
+
+button.text-sm{
+	font-size: 0.8em;
+	color: #333;
+}
+
+.plus-sign{
+	background: #41646a;
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	cursor: pointer;
+	border: none;
+
+	text-align: center;
+	font-weight: bold;
+	color: rgb(240,240,240);
+	font-size: 1em;
+
+	position: fixed;
+	bottom: 3%;
+	right: 3%;
+	box-shadow: 0 4px 6px rgb(200,200,200);
+}
+
+.candidate-p{
+	color: #fff;
+	text-align: center;
+	background: #39bc9d;
+	padding: 6px;
+	font-weight: bold;
+	display: inline;
+}
+
+div.candidate-home{
+	background: #fff;
+}
+
+.candidate-disp{
+	background: #39bc9d;
+	border: 1px solid rgb(220,220,220);
+	width: 100%;
+	margin-top: 5%;
+	height: 0 auto;
+	padding: 5px;
+	display: inline-block;
+	margin-top: 1%;
+	border-radius: 5px;
+	margin-left: 0.8%;
+	margin-right: 0.8%;
+	font-size: 0.9em;
+}
+
+.candidate-img{
+	width: 100%;
+	height: 190px;
+	background: #fff;
+	padding: 3px;
+	border-radius: 3px;
+	margin: 0 auto;
+}
+
+.candidate-img img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.candidate-desc{
+	background: #fff;
+	margin: 0 auto;
+	margin-top: 2%;
+	width: 98%;
+	height: 0 auto;
+	padding: 6px;
+
+	font-weight: bold;
+	color: #666;
+}
+
+.candidate-name{
+	color: rgb(0,100,255);
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	margin-bottom: 4%;
+}
+
+.candidate-votes{
+	background: #39bc9d;
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	padding: 5px;
+	width: 90%;
+	margin-top: 2%;
+}
+
+.candidate-party{
+	display: block;
+	text-align: center;
+}
+
+.candidate-manage{
+	background: #fff;
+	width: 90%;
+	height: 0 auto;
+	margin: 0 auto;
+	margin-top: 4%;
+	padding: 3px;
+
+	display: table;
+}
+
+a.deleteBtn{
+	background: none;
+	border: 1px solid rgb(200,200,200);
+	padding: 6px;
+	float: left;
+	border-radius: 4px;
+
+	font-weight: bold;
+	color: maroon;
+}
+
+a.deleteBtn:hover{
+	box-shadow: 0 1px 2px #444;
+}
+
+a.updateBtn{
+	background: none;
+	border: 1px solid rgb(200,200,200);
+	padding: 6px;
+	float: right;
+	border-radius: 4px;
+
+	font-weight: bold;
+	color: navy;
+}
+
+a.updateBtn:hover{
+	box-shadow: 0 1px 2px #444;
+}
+
+[class*=welcomWord-]{
+	background: rgba(0,0,0,0.3);
+	width: 98%;
+	height: 170px;
+	margin-top: 2%;
+	float: left;
+	margin-left: 2%;
+	padding: 12px;
+	color: #999;
+}
+
+.welcomWord-1{
+	border-left: 3px dotted skyblue;
+}
+
+.no-hover:hover{
+	box-shadow: none;
+	background: skyblue;
+	color: #333;
+}
+
+.welcomWord-2{
+	border-left: 3px dotted green;
+}
+
+.welcomWord-3{
+	border-left: 3px dotted yellow;
+}
+
+.welcomWord-4{
+	border-left: 3px dotted violet;
+}
+
+.welcomWord-5{
+	border-left: 3px dotted orange;
+}
+
+.welcomWord-6{
+	border-left: 3px dotted pink;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+		========== Responsiveness ==========
+*/
+
+@media only screen and (min-width: 768px){
+	nav{
+		width: 40%;
+	}
+
+	.single-candidate{
+		width: 22.5%;
+		margin-left: 1%;
+		margin-right: 1%;
+		display: inline-block;
+	}
+
+	.vote{
+		width: 30%;
+	}
+
+	.loginForm{
+		width: 30%;
+	}
+
+	.brand-word{
+		display: block;
+	}
+
+	.pro-cont{
+		width: 99%;
+		height: 283px;
+	}
+
+	.form-update{
+		width: 30%;
+	}
+
+	.candidate-disp{
+		width: 18%;
+	}
+
+	[class*=welcomWord-]{
+		width: 30%;
+	}
+}
