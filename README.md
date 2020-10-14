@@ -1,2 +1,2 @@
 # eVote
-Ask for the payment firset!
+Ask for the payment first!
