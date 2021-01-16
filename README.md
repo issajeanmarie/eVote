@@ -7,8 +7,9 @@ This small online voting system works as follow:
  
 ## If you want to login as an admin:
  go to : localhost/online_voting/admin
+         Default user name and password USER NAME = 'issa' PASSWORD = 'xyz'
  * The platform did provide only one admin. Just in certain sector/area.
  
  
-Enjoy if you are developing small projects!
-It is a good start!
+                    Enjoy if you are developing small projects!
+                    It is a good start!
